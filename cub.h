@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmsanli <ahmsanli@student.42istanbul.com. +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/10 15:40:04 by ahmsanli          #+#    #+#             */
+/*   Updated: 2024/11/10 15:40:04 by ahmsanli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB_H
 # define CUB_H
 
@@ -75,5 +87,14 @@
 # define ERR_MLX_START "Could not start mlx"
 # define ERR_MLX_WIN "Could not create mlx window"
 # define ERR_MLX_IMG "Could not create mlx image"
+
+typedef	struct	s_game
+{
+    void		*mlx;
+    void		*win;
+    void		*img;
+}				t_game;
+
+int exit_error(t_game *game, char const *str);
 
 #endif
