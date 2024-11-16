@@ -91,9 +91,9 @@
 typedef	struct	s_game
 {
     void        *mlx;
-    void		*win;
-    void		*img;
-}				t_game;
+    void        *win;
+    void        *img;
+}               t_game;
 
 typedef struct s_vector2
 {
