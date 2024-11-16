@@ -90,7 +90,7 @@
 
 typedef	struct	s_game
 {
-    void		*mlx;
+    void        *mlx;
     void		*win;
     void		*img;
 }				t_game;
@@ -100,7 +100,6 @@ typedef struct s_vector2
     size_t      x;
     size_t      y;
 }               t_vector2;
-
 
 typedef struct s_player
 {
