@@ -95,6 +95,78 @@ typedef	struct	s_game
     void		*img;
 }				t_game;
 
+typedef struct s_vector2
+{
+    size_t      x;
+    size_t      y;
+}               t_vector2;
+
+
+typedef struct s_player
+{
+    t_vector2   pos;
+    t_vector2   dir;
+    t_vector2   plane;
+    int         move_speed;
+    int         rot_speed;
+}               t_player;
+
+typedef struct s_map
+{
+    char        **map;
+    size_t      width;
+    size_t      height;
+}               t_map;
+
+typedef struct s_texture
+{
+    char        *path;
+    int         *data;
+    int         width;
+    int         height;
+}               t_texture;
+
+typedef struct s_color
+{
+    int         r;
+    int         g;
+    int         b;
+}               t_color;
+
+typedef struct s_cub
+{
+    t_map       map;
+    t_player    player;
+    t_texture   tex[5];
+    t_color     floor;
+    t_color     ceiling;
+}               t_cub;
+
+typedef struct s_ray
+{
+    t_vector2   pos;
+    t_vector2   dir;
+    t_vector2   plane;
+    t_vector2   map;
+    t_vector2   side_dist;
+    t_vector2   delta_dist;
+    t_vector2   step;
+    size_t      perp_wall_dist;
+    size_t      wall_x;
+    size_t      step;
+    size_t      tex_pos;
+    int         side;
+    int         hit;
+    int         line_height;
+    int         draw_start;
+    int         draw_end;
+    int         tex_num;
+    int         tex_x;
+    int         tex_y;
+    int         color;
+    int         *texture;
+}               t_ray;
+
 int exit_error(t_game *game, char const *str);
 
 #endif
