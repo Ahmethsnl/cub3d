@@ -86,4 +86,4 @@ int main() {
     return 0;
 }
 
-//2D raycasting algoritması
+//2D raycasting Algorithm
