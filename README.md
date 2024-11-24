@@ -43,6 +43,30 @@ Bir oyun ya da görselleştirme programı yazarken, bu adımları bilgisayara ö
 
 ---
 
+## Execution Order (Çalışma Sırası)
+
+Bir DDA algoritmasını kullanan raycasting programında, işlem sırası çok önemlidir. İşte doğru bir **execution order**:
+
+1. **Girdi İşleme:**  
+   Kullanıcının hangi yöne baktığını (açıyı) belirlemek için fare ve klavye girdilerini oku.
+   
+2. **Işın Hesaplama:**  
+   Her ışın için:
+   - Oyuncunun bulunduğu konumdan başlayarak DDA algoritması ile ışının hangi karelerden geçtiğini hesapla.
+   - Işığın bir duvara çarptığı noktayı belirle.
+   
+3. **Mesafe Hesaplama:**  
+   Işığın duvara çarptığı noktaya olan uzaklığını hesapla. Bu bilgi, duvarın ekranda nasıl görüneceğini belirler.
+
+4. **Görselleştirme:**  
+   - Duvara olan uzaklığa göre duvarın yüksekliğini hesapla (yakın duvarlar daha büyük, uzak duvarlar daha küçük görünür).
+   - Her ışını temsil eden bir çubuk (column) çizerek duvarları ekrana yansıt.
+
+5. **Ekranı Güncelle:**  
+   - Çizim işlemi bittikten sonra ekranı güncelle ve bir sonraki kareyi (frame) işlemeye hazır ol.
+
+---
+
 ## Basit Bir Örnek
 **Örnek Durum:**  
 El feneriyle bir labirentin içinde duruyorsun. Labirent karelerden oluşuyor ve fenerden çıkan ışık, önündeki duvara çarpıyor.  
@@ -91,7 +115,10 @@ DDA algoritması ve raycasting, eski tarz 3D oyunlar (ör. **DOOM** veya **Wolfe
 3. **Nasıl çalışır?**  
    Adım adım ilerler, bir duvara çarptığında durur ve mesafeyi hesaplar.
 
-4. **Neden kullanılır?**  
+4. **Execution Order:**  
+   Girdi al, ışını hesapla, mesafeyi bul, duvarı çiz ve ekranı güncelle.
+
+5. **Neden kullanılır?**  
    Hızlı ve doğru bir şekilde 3D görüntü oluşturmak için.
 
 ---
