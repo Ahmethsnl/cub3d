@@ -167,3 +167,22 @@ void physics_rotate(t_physics *physics, t_vector2 rotation)
     physics->transform.rotation = vector2_add(physics->transform.rotation, rotation);
     physics->raycast.direction = vector2_create(cos(physics->transform.rotation.x) * cos(physics->transform.rotation.y), sin(physics->transform.rotation.x) * cos(physics->transform.rotation.y));
 }
+
+void physics_update(t_physics *physics, t_map *map)
+{
+    t_vector2 forward = transform_forward(physics->transform);
+    t_vector2 right = transform_right(physics->transform);
+    t_vector2 up = transform_up(physics->transform);
+    if (GetKeyState('W') & 0x8000)
+        physics_move(physics, forward);
+    if (GetKeyState('S') & 0x8000)
+        physics_move(physics, vector2_mul(forward, -1));
+    if (GetKeyState('D') & 0x8000)
+        physics_move(physics, right);
+    if (GetKeyState('A') & 0x8000)
+        physics_move(physics, vector2_mul(right, -1));
+    physics->raycast = raycast_create(physics->transform.position, physics->transform.rotation);
+    t_vector2 hit = raycast_cast(physics->raycast, map);
+    if (hit.x != physics->transform.position.x || hit.y != physics->transform.position.y)
+        physics->transform.position = hit;
+}
