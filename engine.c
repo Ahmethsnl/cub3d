@@ -186,3 +186,4 @@ void physics_update(t_physics *physics, t_map *map)
     if (hit.x != physics->transform.position.x || hit.y != physics->transform.position.y)
         physics->transform.position = hit;
 }
+
