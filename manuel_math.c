@@ -67,27 +67,6 @@ double tan_manual(double x) {
     return sin_x / cos_x; // Tanjant hesaplanır
 }
 
-int main() {
-    double x, y;
-
-    // Kullanıcıdan giriş al
-    printf("x değerini girin: ");
-    scanf("%lf", &x);
-
-    printf("y değerini girin: ");
-    scanf("%lf", &y);
-
-    // Hipotenüsü hesapla
-    double r = sqrt_manual(x * x + y * y);
-
-    // Sinüs hesapla
-    double z = sin_manual(r);
-
-    printf("z = sin(sqrt(x^2 + y^2)) = %lf\n", z);
-
-    return 0;
-}
-
 int secant_manual(double x) {
     return 1 / cos_manual(x);
 }
