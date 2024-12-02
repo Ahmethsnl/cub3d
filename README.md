@@ -123,4 +123,6 @@ DDA algoritması ve raycasting, eski tarz 3D oyunlar (ör. **DOOM** veya **Wolfe
 
 ---
 
+https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Transformable.php#a4dbfb1a7c80688b0b4c477d706550208
+
 Sorularınız olursa sormaktan çekinmeyin!
