@@ -50,6 +50,10 @@ DDA algoritması, bir çizgi üzerindeki her pikselin koordinatını adım adım
 | **Karmaşıklık**        | Daha karmaşık                 | Daha basit                    |
 | **Kullanım Alanı**     | Performans kritik yerlerde    | Genel ve basit uygulamalarda  |
 
+![DDA-Bresenham](./DDA vs Bresenham.png)
+
+<img src="DDA vs Bresenham.png" alt="DDA-Bresenham" width="500"/>
+
 ---
 
 ## 4. DDA Algoritması ve Raycasting
@@ -66,13 +70,6 @@ Bir ışın (ray), harita üzerindeki hücreler (kareler) arasında adım adım 
 ## 5. Bresenham Algoritması ve Raycasting
 Bresenham algoritması, raycasting sırasında ışının harita üzerinde hangi hücrelerden geçtiğini hızlı ve doğru bir şekilde hesaplamak için de kullanılabilir.  
 - **Avantajı:** Tam sayı tabanlı hesaplamalar yaparak ışının izlediği yolu belirler ve performans açısından avantaj sağlar.
-
-### Çalışma Sırası
-1. **Girdi İşleme:** Oyuncunun yönü ve bakış açısı belirlenir.  
-2. **Işın Hesaplama:** Işının geçtiği hücreler Bresenham veya DDA algoritması ile hesaplanır.  
-3. **Mesafe Hesaplama:** Işının duvara çarptığı noktaya olan mesafesi belirlenir.  
-4. **Görselleştirme:** Mesafeye göre duvarın ekrandaki yüksekliği hesaplanır.  
-5. **Ekranı Güncelle:** Görüntü çizilir ve bir sonraki kareye geçilir.
 
 ### Örnek Kod
 Bresenham algoritması ile ışın ilerlemesini hesaplayan bir örnek:  
@@ -123,3 +120,30 @@ Raycasting algoritmalarında işlem sırası, ışınların doğru hesaplanması
 
 ### Neden Önemlidir?
 Bresenham ve DDA algoritmaları, eski 3D oyunlar (ör. **DOOM**, **Wolfenstein 3D**) için temel taşlardır. Günümüzde daha gelişmiş yöntemler kullanılsa da, bu teknikler oyun geliştirme dünyasında tarihsel bir öneme sahiptir.
+
+---
+
+## Özet
+1. **Raycasting nedir?**  
+   Oyuncunun baktığı yönde ışıklar göndermek ve duvarları bulmak.
+
+2. **DDA Algoritması nedir?**  
+   Işığın bir harita üzerindeki karelerden nasıl geçtiğini hesaplayan bir yöntem.
+
+3. **Nasıl çalışır?**  
+   Adım adım ilerler, bir duvara çarptığında durur ve mesafeyi hesaplar.
+
+4. **Execution Order:**  
+   Girdi al, ışını hesapla, mesafeyi bul, duvarı çiz ve ekranı güncelle.
+
+5. **Neden kullanılır?**  
+   Hızlı ve doğru bir şekilde 3D görüntü oluşturmak için.
+
+---
+### Yardımcı Olabilicek Dökümanlar ve Videolar
+1. **https://www.sfml-dev.org/documentation/2.6.2/classsf_1_1Transformable.php**
+2. **https://www.youtube.com/watch?v=NbSee-XM7WA&t=1489s**
+3. **https://www.youtube.com/watch?v=W5P8GlaEOSI**
+4. **https://www.youtube.com/watch?v=ebzlMOw79Yw**
+5. **https://www.youtube.com/watch?v=pTAUx-uYNjM**
+6. **https://www.youtube.com/watch?v=RGB-wlatStc**
