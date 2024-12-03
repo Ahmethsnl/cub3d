@@ -77,7 +77,7 @@ Bresenham algoritması, raycasting sırasında ışının harita üzerinde hangi
 ### Örnek Kod
 Bresenham algoritması ile ışın ilerlemesini hesaplayan bir örnek:  
 
-```cpp
+```c
 int x = oyuncunun_x;
 int y = oyuncunun_y;
 
@@ -101,6 +101,7 @@ while (x != hedef_x) {
         break; // İşlem tamam
     }
 }
+```
 
 ## 6. Execution Order (Çalışma Sırası) ve Önemi
 Raycasting algoritmalarında işlem sırası, ışınların doğru hesaplanması ve görselleştirilmesi için kritik önem taşır. İşlem sırası şu şekilde ilerler:
