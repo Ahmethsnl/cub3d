@@ -116,3 +116,27 @@ Raycasting algoritmalarında işlem sırası, ışınların doğru hesaplanması
 
 ### Neden Önemlidir?
 Bresenham ve DDA algoritmaları, eski 3D oyunlar (ör. **DOOM**, **Wolfenstein 3D**) için temel taşlardır. Günümüzde daha gelişmiş yöntemler kullanılsa da, bu teknikler oyun geliştirme dünyasında tarihsel bir öneme sahiptir.
+
+---
+
+## Özet
+1. **Raycasting nedir?**  
+   Oyuncunun baktığı yönde ışıklar göndermek ve duvarları bulmak.
+
+2. **DDA Algoritması nedir?**  
+   Işığın bir harita üzerindeki karelerden nasıl geçtiğini hesaplayan bir yöntem.
+
+3. **Nasıl çalışır?**  
+   Adım adım ilerler, bir duvara çarptığında durur ve mesafeyi hesaplar.
+
+4. **Execution Order:**  
+   Girdi al, ışını hesapla, mesafeyi bul, duvarı çiz ve ekranı güncelle.
+
+5. **Neden kullanılır?**  
+   Hızlı ve doğru bir şekilde 3D görüntü oluşturmak için.
+
+---
+### Yardımcı Olabilicek Dökümanlar
+1. ** https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Transformable.php#a4dbfb1a7c80688b0b4c477d706550208 **
+
+Sorularınız olursa sormaktan çekinmeyin!
