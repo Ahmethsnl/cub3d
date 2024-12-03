@@ -1,5 +1,3 @@
-# Bresenham ve DDA Algoritmaları: Karşılaştırma ve Kullanım Alanları
-
 ## 1. Bresenham Algoritması
 Bresenham algoritması, iki nokta arasında bir çizgi oluşturmak için kullanılan etkili bir rasterleştirme yöntemidir. Bu algoritma, hangi piksellerin çizileceğini tam sayı aritmetiği kullanarak belirler. Kayan noktalı işlemler gerektirmediği için hızlı ve verimlidir.
 
@@ -25,7 +23,7 @@ Bresenham algoritması, iki nokta arasında bir çizgi oluşturmak için kullan�
 DDA algoritması, bir çizgi üzerindeki her pikselin koordinatını adım adım hesaplamak için kullanılan eğim tabanlı bir yöntemdir. Bu yöntem kayan noktalı işlemleri içerir.
 
 ### Algoritmanın Adımları
-1. Başlangıç ve bitiş noktalarını (\(x_0, y_0\)) ve (\(x_1, y_1\)) belirleyin.
+1. Başlangıç ve bitiş noktalarını (\(x_0, y_0\)) ve (\(x_1, y_1\)) belirleyin.  
 2. Çizginin uzunluğunu bulun:  
    \(\text{steps} = \max(|x_1 - x_0|, |y_1 - y_0|)\).  
 3. Her bir adımda artış miktarını hesaplayın:  
@@ -50,5 +48,33 @@ DDA algoritması, bir çizgi üzerindeki her pikselin koordinatını adım adım
 | **Karmaşıklık**        | Daha karmaşık                 | Daha basit                    |
 | **Kullanım Alanı**     | Performans kritik yerlerde    | Genel ve basit uygulamalarda  |
 
-...
+---
 
+## 4. DDA Algoritması ve Raycasting
+Raycasting, oyun geliştirme ve görselleştirme alanında 3D sahneleri simüle etmek için kullanılan bir yöntemdir. Basitçe ifade etmek gerekirse, bir labirentte el feneriyle baktığınız yönü aydınlatmayı sağlayan bir tekniktir.
+
+### DDA Algoritması ile Raycasting
+Bir ışın (ray), harita üzerindeki hücreler (kareler) arasında adım adım ilerler. Bu ilerleme sırasında:  
+1. Işının hangi hücrelerden geçtiği hesaplanır.  
+2. Işının bir duvara çarpıp çarpmadığı kontrol edilir.  
+3. Duvara çarptığı mesafe hesaplanır ve ekrana yansıtılır.  
+
+---
+
+## 5. Bresenham Algoritması ve Raycasting
+Bresenham algoritması, raycasting sırasında ışının harita üzerinde hangi hücrelerden geçtiğini hızlı ve doğru bir şekilde hesaplamak için de kullanılabilir.  
+- **Avantajı:** Tam sayı tabanlı hesaplamalar yaparak ışının izlediği yolu belirler ve performans açısından avantaj sağlar.
+
+### Çalışma Sırası
+1. **Girdi İşleme:** Oyuncunun yönü ve bakış açısı belirlenir.  
+2. **Işın Hesaplama:** Işının geçtiği hücreler Bresenham veya DDA algoritması ile hesaplanır.  
+3. **Mesafe Hesaplama:** Işının duvara çarptığı noktaya olan mesafesi belirlenir.  
+4. **Görselleştirme:** Mesafeye göre duvarın ekrandaki yüksekliği hesaplanır.  
+5. **Ekranı Güncelle:** Görüntü çizilir ve bir sonraki kareye geçilir.
+
+---
+
+### Neden Önemlidir?
+Bresenham ve DDA algoritmaları, eski 3D oyunlar (ör. **DOOM**, **Wolfenstein 3D**) için temel taşlardır. Günümüzde daha gelişmiş yöntemler kullanılsa da, bu teknikler oyun geliştirme dünyasında tarihsel bir öneme sahiptir.  
+
+"""
