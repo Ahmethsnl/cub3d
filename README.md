@@ -50,6 +50,10 @@ DDA algoritması, bir çizgi üzerindeki her pikselin koordinatını adım adım
 | **Karmaşıklık**        | Daha karmaşık                 | Daha basit                    |
 | **Kullanım Alanı**     | Performans kritik yerlerde    | Genel ve basit uygulamalarda  |
 
+![DDA-Bresenham](./DDA-vs-Bresenham.png)
+
+<img src="DDA-vs-Bresenham.png" alt="DDA-Bresenham" width="500"/>
+
 ---
 
 ## 4. DDA Algoritması ve Raycasting
