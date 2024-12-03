@@ -137,6 +137,6 @@ Bresenham ve DDA algoritmaları, eski 3D oyunlar (ör. **DOOM**, **Wolfenstein 3
 
 ---
 ### Yardımcı Olabilicek Dökümanlar
-1. ** https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Transformable.php#a4dbfb1a7c80688b0b4c477d706550208 **
+1. **https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Transformable.php#a4dbfb1a7c80688b0b4c477d706550208**
 
 Sorularınız olursa sormaktan çekinmeyin!
