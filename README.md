@@ -140,7 +140,7 @@ Bresenham ve DDA algoritmaları, eski 3D oyunlar (ör. **DOOM**, **Wolfenstein 3
    Hızlı ve doğru bir şekilde 3D görüntü oluşturmak için.
 
 ---
-### Yardımcı Olabilicek Dökümanlar ve Videolar
+### Yardımcı Olabilicek Döküman ve Videolar
 1. **https://www.sfml-dev.org/documentation/2.6.2/classsf_1_1Transformable.php**
 2. **https://www.youtube.com/watch?v=NbSee-XM7WA&t=1489s**
 3. **https://www.youtube.com/watch?v=W5P8GlaEOSI**
