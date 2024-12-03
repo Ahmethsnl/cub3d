@@ -143,5 +143,3 @@ Bresenham ve DDA algoritmaları, eski 3D oyunlar (ör. **DOOM**, **Wolfenstein 3
 4. **https://www.youtube.com/watch?v=ebzlMOw79Yw**
 5. **https://www.youtube.com/watch?v=pTAUx-uYNjM**
 6. **https://www.youtube.com/watch?v=RGB-wlatStc**
-
-Sorularınız olursa sormaktan çekinmeyin!
