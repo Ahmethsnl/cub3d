@@ -67,13 +67,6 @@ Bir ışın (ray), harita üzerindeki hücreler (kareler) arasında adım adım 
 Bresenham algoritması, raycasting sırasında ışının harita üzerinde hangi hücrelerden geçtiğini hızlı ve doğru bir şekilde hesaplamak için de kullanılabilir.  
 - **Avantajı:** Tam sayı tabanlı hesaplamalar yaparak ışının izlediği yolu belirler ve performans açısından avantaj sağlar.
 
-### Çalışma Sırası
-1. **Girdi İşleme:** Oyuncunun yönü ve bakış açısı belirlenir.  
-2. **Işın Hesaplama:** Işının geçtiği hücreler Bresenham veya DDA algoritması ile hesaplanır.  
-3. **Mesafe Hesaplama:** Işının duvara çarptığı noktaya olan mesafesi belirlenir.  
-4. **Görselleştirme:** Mesafeye göre duvarın ekrandaki yüksekliği hesaplanır.  
-5. **Ekranı Güncelle:** Görüntü çizilir ve bir sonraki kareye geçilir.
-
 ### Örnek Kod
 Bresenham algoritması ile ışın ilerlemesini hesaplayan bir örnek:  
 
