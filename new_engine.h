@@ -114,7 +114,6 @@ typedef struct s_engine
     t_physics   *physics;
 }              t_engine;
 
-
 typedef struct s_map
 {
     int          width;
