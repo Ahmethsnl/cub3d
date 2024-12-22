@@ -65,13 +65,13 @@
 
 typedef struct s_images
 {
-	void	*img;
-	int		*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 	int		width;
 	int		height;
+	int		*addr;
+	void	*img;
 }				t_images;
 
 typedef struct s_vector2 
@@ -88,13 +88,13 @@ typedef struct s_transform
 
 typedef struct s_raycast
 {
+    double       camera_x;
     t_vector2    step;
     t_vector2    plane;
     t_vector2    origin;
     t_vector2    direction;
     t_vector2    side_distance;
     t_vector2    delta_distance;
-    double       camera_x;
 }              t_raycast;
 
 typedef struct s_physics
@@ -108,9 +108,10 @@ typedef struct s_engine
     void        *mlx_ptr;
     void        *win_ptr;
     void        *img_ptr;
-    char        *map_data;
+    char        *map_path;
+    int         map_fd;
     t_map       *map;
-    t_images    **images;
+    t_images    *images;
     t_physics   *physics;
 }              t_engine;
 
@@ -118,7 +119,7 @@ typedef struct s_map
 {
     int          width;
     int          height;
-    int          **map;
+    char          **map;
 }              t_map;
 
 #endif
