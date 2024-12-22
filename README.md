@@ -52,7 +52,7 @@ DDA algoritması, bir çizgi üzerindeki her pikselin koordinatını adım adım
 
 ---
 
-<img src="DDA-Bresenham.png" alt="DDA-Bresenham" width="700"/>
+<img src="my_cub_documents/DDA-Bresenham.png" alt="my_cub_documents/DDA-Bresenham" width="700"/>
 
 ---
 
