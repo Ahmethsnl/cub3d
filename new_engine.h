@@ -95,6 +95,7 @@ typedef struct s_vector2
 typedef struct s_transform
 {
     t_vector2    position;
+    t_vector2    direction;
     t_vector2    rotation;
 }              t_transform;
 
@@ -107,6 +108,7 @@ typedef struct s_raycast
     t_vector2    direction;
     t_vector2    side_distance;
     t_vector2    delta_distance;
+    double       perpWallDist;
 }              t_raycast;
 
 typedef struct s_physics
@@ -133,5 +135,10 @@ typedef struct s_map
     int          height;
     char          **map;
 }              t_map;
+
+int init_raycast(t_raycast  *raycast);
+t_vector2 raycast(t_engine *engine);
+int ray_main(t_engine *engine);
+void another(t_engine *engine);
 
 #endif

@@ -27,6 +27,12 @@ int init_raycast(t_raycast  *raycast)
     raycast->side_distance.y = 0;
     raycast->delta_distance.x = 0;
     raycast->delta_distance.y = 0;
+    //Formüller
+    //raycast->camera_x = 2 * x / (double)WIDTH - 1;
+    raycast->plane.x = 0;
+    raycast->plane.y = 0.66;
+    raycast->direction.x + plane.x * camera_x;
+    raycast->direction.y + plane.y * camera_x;
     return (0);
 }
 
@@ -86,4 +92,88 @@ int ray_main(t_engine *engine)
         //draw_line(engine, wall_pos);
     }
     return (0);
+}
+void another(t_engine *engine) // perfect spaghetti
+{
+    for (int x = 0; x < SCREEN_WIDTH; x++)
+    {
+        engine->physics->raycast->camera_x = 2 * x / (double)SCREEN_WIDTH - 1; // Kamera koordinatları
+        engine->physics->raycast->direction.x = engine->physics->transform->direction.x + engine->physics->raycast->plane.x * engine->physics->raycast->camera_x;  // Işın yönü X
+        engine->physics->raycast->direction.y = engine->physics->transform->direction.y + engine->physics->raycast->plane.y * engine->physics->raycast->camera_x;  // Işın yönü Y
+
+        int mapX = (int)engine->physics->transform->position.x;
+        int mapY = (int)engine->physics->transform->position.y;
+
+        double posX = engine->physics->transform->position.x;
+        double posY = engine->physics->transform->position.y;
+
+        engine->physics->raycast->delta_distance.x = fabs(1 / engine->physics->raycast->direction.x);
+        engine->physics->raycast->delta_distance.y = fabs(1 / engine->physics->raycast->direction.y);
+        double perpWallDist = engine->physics->raycast->perpWallDist;
+
+        int stepX = engine->physics->raycast->step.x;
+        int stepY = engine->physics->raycast->step.y;
+        int hit = 0;
+        int side;
+
+        // Başlangıç ray yayılma adımı
+        if (engine->physics->raycast->direction.x < 0)
+        {
+            stepX = -1;
+            engine->physics->raycast->side_distance.x = (posX - mapX) * engine->physics->raycast->delta_distance.x;
+        }
+        else
+        {
+            stepX = 1;
+            engine->physics->raycast->side_distance.x = (mapX + 1.0 - posX) * engine->physics->raycast->delta_distance.x;;
+        }
+        if (rayDirY < 0)
+        {
+            stepY = -1;
+            engine->physics->raycast->side_distance.y = (posY - mapY) * engine->physics->raycast->delta_distance.y;
+        }
+        else
+        {
+            stepY = 1;
+            engine->physics->raycast->side_distance.y = (mapY + 1.0 - posY) * engine->physics->raycast->delta_distance.y;;
+        }
+
+        // DDA (Digital Differential Analysis) Algoritması ile ışın izleme
+        while (hit == 0)
+        {
+            if (engine->physics->raycast->side_distance.x < engine->physics->raycast->side_distance.y)
+            {
+                engine->physics->raycast->side_distance.x += engine->physics->raycast->delta_distance.x;
+                mapX += stepX;
+                side = 0;
+            }
+            else
+            {
+                engine->physics->raycast->side_distance.y += engine->physics->raycast->delta_distance.y;
+                mapY += stepY;
+                side = 1;
+            }
+            if (worldMap[mapX][mapY] > 0) hit = 1;
+        }
+
+        // Mesafe hesaplaması
+        if (side == 0) perpWallDist = (mapX - posX + (1 - stepX) / 2) / engine->physics->raycast->direction.x;
+        else perpWallDist = (mapY - posY + (1 - stepY) / 2) / engine->physics->raycast->direction.y;
+
+        int lineHeight = (int)(SCREEN_HEIGHT / perpWallDist);
+
+        int drawStart = -lineHeight / 2 + SCREEN_HEIGHT / 2;
+        if (drawStart < 0) drawStart = 0;
+        int drawEnd = lineHeight / 2 + SCREEN_HEIGHT / 2;
+        if (drawEnd >= SCREEN_HEIGHT) drawEnd = SCREEN_HEIGHT - 1;
+
+        int color = 0xFF0000; // Kırmızı duvar
+        if (side == 1) color = color / 2; // Yansıyan yüzeyde rengin koyulaşması
+
+        // Duvar çizimi
+        for (int y = drawStart; y < drawEnd; y++)
+        {
+            put_pixel(x, y, color);
+        }
+    }
 }
