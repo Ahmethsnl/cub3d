@@ -58,6 +58,10 @@ t_vector2 raycast(t_engine *engine)
     camera_x = raycast->camera_x;
     step = &raycast->step;
     while (1)
+    if ((int)position->y < 0 || (int)position->x < 0 ||
+        (int)position->y >= engine->map->height ||
+        (int)position->x >= engine->map->width)
+        return (1); // Hata: Harita sınırlarının dışına çıkıldı
     {
         if (side_distance->x < side_distance->y)
         {
@@ -84,13 +88,10 @@ int ray_main(t_engine *engine)
     t_vector2   *wall_pos;
     if (init_raycast(engine->physics->raycast) == -1)
         return (-1);
-    if (raycast(engine) == 0)
-        return (0);
-    else
-    {
-        wall_pos = raycast(engine);
-        //draw_line(engine, wall_pos);
-    }
+    wall_pos = raycast(engine);
+    if (!wall_pos)
+        return (1);
+    //draw_line(engine, wall_pos);
     return (0);
 }
 void another(t_engine *engine) // perfect spaghetti
@@ -173,7 +174,8 @@ void another(t_engine *engine) // perfect spaghetti
         // Duvar çizimi
         for (int y = drawStart; y < drawEnd; y++)
         {
-            put_pixel(x, y, color);
+            //put_pixel(x, y, color);
+            write(1, "waiting", 1);
         }
     }
 }
