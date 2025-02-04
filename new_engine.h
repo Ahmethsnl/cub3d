@@ -49,6 +49,13 @@
 # define KEY_ESC	53
 # define KEY_TAB	48
 
+# define NORTH 'N'
+# define SOUTH 'S'
+# define WEST 'W'
+# define EAST 'E'
+# define WALL '1'
+# define FLOOR '0'
+
 # define ERR_USAGE "usage: ./cub3d <path/to/map.cub>"
 
 # define ERR_FILE_NOT_CUB "Not a .cub file"
@@ -108,7 +115,10 @@ typedef struct s_raycast
     t_vector2    direction;
     t_vector2    side_distance;
     t_vector2    delta_distance;
+    t_vector2    map;
     double       perpWallDist;
+    int          wall_hit;
+    int          side;
 }              t_raycast;
 
 typedef struct s_physics

@@ -12,13 +12,9 @@ void dda(int x1, int y1, int x2, int y2)
     float y = y1;
 
     if (abs(dx) > abs(dy))
-    {
         steps = abs(dx);
-    }
     else
-    {
         steps = abs(dy);
-    }
 
     xIncrement = dx / (float)steps;
     yIncrement = dy / (float)steps;
