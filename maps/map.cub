@@ -1,0 +1,9 @@
+
+NO ./textures/horse2.xpm
+SO ./textures/horse1.xpm
+EA ./textures/horse3.xpm
+WE ./textures/horse4.xpm
+
+F 2,255,255
+C 255,225,255
+

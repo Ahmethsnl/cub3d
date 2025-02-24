@@ -1,0 +1,16 @@
+F 5,255,1 
+NO ./textures/horse2.xpm
+EA ./textures/horse3.xpm
+C 255,225,25
+WE ./textures/horse4.xpm
+SO ./textures/horse1.xpm
+
+
+11  11
+111111111111
+1E000000001
+1010000000011
+10000100011
+10000000011
+10000000001
+11111111111
