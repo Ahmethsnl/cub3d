@@ -1,3 +1,5 @@
+# CUB3D
+
 [![Last Commit](https://img.shields.io/github/last-commit/ahmethsnl/cub3d?style=flat)](https://github.com/ahmethsnl/cub3d/commits)
 
 # Bresenham ve DDA Algoritmaları: Karşılaştırma ve Kullanım Alanları
